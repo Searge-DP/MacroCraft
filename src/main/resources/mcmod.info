@@ -1,0 +1,16 @@
+[
+{
+  "modid": "macrocraft",
+  "name": "MacroCraft",
+  "description": "W.I.P.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["gegy1000"],
+  "credits": "TheDurpiDaedric",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
