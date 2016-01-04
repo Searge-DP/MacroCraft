@@ -3,7 +3,9 @@ package net.gegy1000.macrocraft.client.proxy;
 import net.gegy1000.macrocraft.MacroCraft;
 import net.gegy1000.macrocraft.client.event.ClientEventHandler;
 import net.gegy1000.macrocraft.client.event.GuiOverlay;
+import net.gegy1000.macrocraft.client.render.RenderSpaceship;
 import net.gegy1000.macrocraft.common.block.MacroCraftBlocks;
+import net.gegy1000.macrocraft.common.entity.EntitySpaceship;
 import net.gegy1000.macrocraft.common.item.MacroCraftItems;
 import net.gegy1000.macrocraft.common.proxy.CommonProxy;
 import net.minecraft.block.Block;
@@ -14,6 +16,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class ClientProxy extends CommonProxy
@@ -41,6 +44,8 @@ public class ClientProxy extends CommonProxy
 
         registerBlockRenderer(modelMesher, MacroCraftBlocks.martian_soil, "martian_soil", "inventory");
         registerBlockRenderer(modelMesher, MacroCraftBlocks.martian_rock, "martian_rock", "inventory");
+
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpaceship.class, new RenderSpaceship());
     }
 
     @Override

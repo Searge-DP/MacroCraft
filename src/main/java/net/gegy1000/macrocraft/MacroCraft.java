@@ -1,6 +1,7 @@
 package net.gegy1000.macrocraft;
 
 import net.gegy1000.macrocraft.common.block.MacroCraftBlocks;
+import net.gegy1000.macrocraft.common.entity.MacroCraftEntityRegistry;
 import net.gegy1000.macrocraft.common.item.MacroCraftItems;
 import net.gegy1000.macrocraft.common.message.MacroCraftNetworkManager;
 import net.gegy1000.macrocraft.common.proxy.CommonProxy;
@@ -29,6 +30,7 @@ public class MacroCraft
     public static MacroCraftBlocks blocks;
     public static MacroCraftItems items;
     public static MacroCraftNetworkManager networkManager;
+    public static MacroCraftEntityRegistry entityRegistry;
 
     public static BiomeGenBase mars;
 
@@ -42,6 +44,9 @@ public class MacroCraft
 
         items = new MacroCraftItems();
         items.register();
+
+        entityRegistry = new MacroCraftEntityRegistry();
+        entityRegistry.register();
 
         networkManager = new MacroCraftNetworkManager();
         networkManager.init();

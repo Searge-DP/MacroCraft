@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MacroCraftItems
 {
-    public static ItemArmor.ArmorMaterial SPACESUIT = EnumHelper.addArmorMaterial("SPACESUIT", "nein", 15, new int[]{2, 6, 5, 2}, 9);
+    public static ItemArmor.ArmorMaterial SPACESUIT = EnumHelper.addArmorMaterial("SPACESUIT", "spacesuit", 15, new int[]{2, 6, 5, 2}, 9);
 
     public static ItemSpacesuit space_helmet;
 
