@@ -2,10 +2,10 @@ package net.gegy1000.macrocraft.common.tile;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
 
-public class TileLight extends TileEntity implements IUpdatePlayerListBox
+public class TileLight extends TileEntity implements ITickable
 {
     public int ticks;
 

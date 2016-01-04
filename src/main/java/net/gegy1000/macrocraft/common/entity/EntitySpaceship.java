@@ -2,7 +2,6 @@ package net.gegy1000.macrocraft.common.entity;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
@@ -108,5 +107,10 @@ public class EntitySpaceship extends Entity
     public Map<BlockPos, SpaceshipBlockContainer> getBlocks()
     {
         return blocks;
+    }
+
+    public void setBlocks(Map<BlockPos, SpaceshipBlockContainer> blocks)
+    {
+        this.blocks = blocks;
     }
 }

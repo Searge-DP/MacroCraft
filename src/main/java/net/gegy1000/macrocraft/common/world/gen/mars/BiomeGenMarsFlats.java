@@ -77,7 +77,7 @@ public class BiomeGenMarsFlats extends BiomeGenBase
     {
         int x = rand.nextInt(16) + 8;
         int z = rand.nextInt(16) + 8;
-        int y = world.getHorizon(pos.add(x, 0, z)).getY();
+        int y = world.getHeight(pos.add(x, 0, z)).getY();
 
         world.setBlockState(pos.add(x, y, z), MacroCraftBlocks.martian_rock.getDefaultState());
 

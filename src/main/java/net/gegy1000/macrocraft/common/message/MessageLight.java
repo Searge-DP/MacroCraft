@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.common.message.AbstractMessage;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
-public class MessageLight extends AbstractMessage<MessageLight> implements IMessage
+public class MessageLight extends AbstractMessage<MessageLight>
 {
     private boolean shining;
 

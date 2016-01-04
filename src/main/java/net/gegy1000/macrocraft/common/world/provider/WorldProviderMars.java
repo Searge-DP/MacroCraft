@@ -1,8 +1,8 @@
 package net.gegy1000.macrocraft.common.world.provider;
 
 import net.gegy1000.macrocraft.common.world.gen.mars.MarsGen;
-import net.ilexiconn.llibrary.common.world.gen.gen.ChunkProviderHeightmap;
-import net.ilexiconn.llibrary.common.world.gen.gen.WorldChunkManagerHeightmap;
+import net.ilexiconn.llibrary.common.world.gen.ChunkProviderHeightmap;
+import net.ilexiconn.llibrary.common.world.gen.WorldChunkManagerHeightmap;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkProvider;

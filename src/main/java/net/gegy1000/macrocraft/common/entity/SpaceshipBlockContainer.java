@@ -1,9 +1,11 @@
 package net.gegy1000.macrocraft.common.entity;
 
+import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
 
 public class SpaceshipBlockContainer
 {
@@ -67,6 +69,36 @@ public class SpaceshipBlockContainer
         {
             NBTTagCompound tileTag = nbt.getCompoundTag("TileEntity");
 
+            tileEntity = TileEntity.createAndLoadEntity(tileTag);
+        }
+    }
+
+    public void toBytes(ByteBuf buf)
+    {
+        Block block = state.getBlock();
+
+        buf.writeInt(Block.getIdFromBlock(block));
+        buf.writeByte(block.getMetaFromState(state));
+
+        if (tileEntity != null)
+        {
+            NBTTagCompound tileTag = new NBTTagCompound();
+
+            tileEntity.writeToNBT(tileTag);
+
+            ByteBufUtils.writeTag(buf, tileTag);
+        }
+    }
+
+    public void fromBytes(ByteBuf buf)
+    {
+        Block block = Block.getBlockById(buf.readInt());
+        state = block.getStateFromMeta(buf.readByte());
+
+        NBTTagCompound tileTag = ByteBufUtils.readTag(buf);
+
+        if (tileTag != null)
+        {
             tileEntity = TileEntity.createAndLoadEntity(tileTag);
         }
     }

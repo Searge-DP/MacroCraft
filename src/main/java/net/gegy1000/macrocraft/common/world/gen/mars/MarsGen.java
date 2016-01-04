@@ -2,7 +2,7 @@ package net.gegy1000.macrocraft.common.world.gen.mars;
 
 import net.gegy1000.macrocraft.MacroCraft;
 import net.gegy1000.macrocraft.common.block.MacroCraftBlocks;
-import net.ilexiconn.llibrary.common.world.gen.gen.WorldHeightmapGenerator;
+import net.ilexiconn.llibrary.common.world.gen.WorldHeightmapGenerator;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.biome.BiomeGenBase;
 
@@ -33,15 +33,9 @@ public class MarsGen extends WorldHeightmapGenerator
     }
 
     @Override
-    public double getHeightScale(int height)
+    public int adjustHeight(int x, int y, int height)
     {
-        return 1.5;
-    }
-
-    @Override
-    public int getHeightOffset(int height)
-    {
-        return -50;
+        return (int) ((height * 1.5) - 50);
     }
 
     @Override
@@ -84,5 +78,23 @@ public class MarsGen extends WorldHeightmapGenerator
     public int getOceanHeight(int x, int z)
     {
         return 0;
+    }
+
+    @Override
+    public int getOutOfBoundsHeight(int i, int i1)
+    {
+        return 60;
+    }
+
+    @Override
+    public boolean loadHeightmapIntoArray()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean loadBiomemapIntoArray()
+    {
+        return false;
     }
 }

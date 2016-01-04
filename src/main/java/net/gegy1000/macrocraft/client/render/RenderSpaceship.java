@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.renderer.vertex.VertexFormat;
 import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.BlockPos;
@@ -44,8 +45,7 @@ public class RenderSpaceship extends Render
 
         for (Map.Entry<BlockPos, SpaceshipBlockContainer> entry : spaceship.getBlocks().entrySet())
         {
-            worldrenderer.startDrawingQuads();
-            worldrenderer.setVertexFormat(DefaultVertexFormats.BLOCK);
+            worldrenderer.begin(7, DefaultVertexFormats.BLOCK);
 
             BlockPos blockpos = entry.getKey();
             IBlockState iblockstate = entry.getValue().getState();
