@@ -54,7 +54,7 @@ public class CommonEventHandler
                 {
                     MovingObjectPosition mop = rayTrace(player, 25, 1.0F);
 
-                    if (!(mop.typeOfHit == MovingObjectPosition.MovingObjectType.MISS))
+                    if (mop != null && !(mop.typeOfHit == MovingObjectPosition.MovingObjectType.MISS))
                     {
                         BlockPos pos;
 
